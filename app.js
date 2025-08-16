@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express =require("express")
 const socket =require("socket.io")
 const http =require("http")
@@ -62,14 +63,8 @@ uniquesocket.on("move",(move)=>{
 
     }
 })
-
-
 })
 
-
-
-
-
-server.listen(port, () => {
+server.listen(process.env.port, () => {
   console.log(`Example app listening on port ${port}`)
 })
